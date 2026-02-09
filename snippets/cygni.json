@@ -1,0 +1,71 @@
+{
+  "Module": {
+    "prefix": "module",
+    "body": [
+      "module ${1:Name} {",
+      "\t$0",
+      "}"
+    ],
+    "description": "Define a new module"
+  },
+  "Function": {
+    "prefix": "func",
+    "body": [
+      "func ${1:Name}(${2:params}): ${3:ReturnType} {",
+      "\t$0",
+      "}"
+    ],
+    "description": "Define a new function"
+  },
+  "Main Function": {
+    "prefix": "main",
+    "body": [
+      "func Main(): Int {",
+      "\t$0",
+      "}"
+    ],
+    "description": "Define the main entry function"
+  },
+  "Structure": {
+    "prefix": "struct",
+    "body": [
+      "struct ${1:Name} {",
+      "\t${2:field}: ${3:Type};",
+      "}"
+    ],
+    "description": "Define a new structure"
+  },
+  "Variable Declaration": {
+    "prefix": "var",
+    "body": "var ${1:name}: ${2:Type} = ${3:value};",
+    "description": "Declare a variable"
+  },
+  "If-Else": {
+    "prefix": "if",
+    "body": [
+      "if (${1:condition}) {",
+      "\t$2",
+      "} else {",
+      "\t$3",
+      "}"
+    ],
+    "description": "If-else statement"
+  },
+  "While Loop": {
+    "prefix": "while",
+    "body": [
+      "while (${1:condition}) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "While loop"
+  },
+  "Native Function": {
+    "prefix": "native",
+    "body": [
+      "@NativeFunction(library = \"${1:path}\", function = \"${2:name}\")",
+      "func ${3:Name}(${4:params}): ${5:ReturnType};"
+    ],
+    "description": "Native function declaration"
+  }
+}

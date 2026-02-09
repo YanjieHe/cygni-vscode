@@ -1,0 +1,34 @@
+{
+  "name": "cygni-language",
+  "displayName": "Cygni Language",
+  "description": "Language support for the Cygni programming language",
+  "version": "0.1.0",
+  "publisher": "yanjiehe",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": ["Programming Languages", "Snippets"],
+  "contributes": {
+    "languages": [
+      {
+        "id": "cygni",
+        "aliases": ["Cygni", "cygni"],
+        "extensions": [".cyg"],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "cygni",
+        "scopeName": "source.cygni",
+        "path": "./syntaxes/cygni.tmLanguage.json"
+      }
+    ],
+    "snippets": [
+      {
+        "language": "cygni",
+        "path": "./snippets/cygni.json"
+      }
+    ]
+  }
+}

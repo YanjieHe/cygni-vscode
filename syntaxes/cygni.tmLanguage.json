@@ -1,0 +1,123 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "Cygni",
+  "scopeName": "source.cygni",
+  "patterns": [
+    { "include": "#comments" },
+    { "include": "#keywords" },
+    { "include": "#types" },
+    { "include": "#strings" },
+    { "include": "#characters" },
+    { "include": "#numbers" },
+    { "include": "#operators" },
+    { "include": "#annotations" },
+    { "include": "#functions" },
+    { "include": "#constants" }
+  ],
+  "repository": {
+    "comments": {
+      "name": "comment.line.double-slash.cygni",
+      "match": "//.*$"
+    },
+    "keywords": {
+      "patterns": [
+        {
+          "name": "keyword.control.cygni",
+          "match": "\\b(if|else|while|for|break|return)\\b"
+        },
+        {
+          "name": "keyword.declaration.cygni",
+          "match": "\\b(module|func|var|struct)\\b"
+        },
+        {
+          "name": "keyword.other.cygni",
+          "match": "\\b(import|new)\\b"
+        }
+      ]
+    },
+    "types": {
+      "name": "support.type.cygni",
+      "match": "\\b(Int|Long|Float|Double|Bool|Char|String|Void)\\b"
+    },
+    "constants": {
+      "name": "constant.language.cygni",
+      "match": "\\b(true|false)\\b"
+    },
+    "strings": {
+      "name": "string.quoted.double.cygni",
+      "begin": "\"",
+      "end": "\"",
+      "patterns": [
+        {
+          "name": "constant.character.escape.cygni",
+          "match": "\\\\."
+        }
+      ]
+    },
+    "characters": {
+      "name": "string.quoted.single.cygni",
+      "begin": "'",
+      "end": "'",
+      "patterns": [
+        {
+          "name": "constant.character.escape.cygni",
+          "match": "\\\\."
+        }
+      ]
+    },
+    "numbers": {
+      "patterns": [
+        {
+          "name": "constant.numeric.float.cygni",
+          "match": "\\b\\d+\\.\\d+([eE][+-]?\\d+)?\\b"
+        },
+        {
+          "name": "constant.numeric.integer.cygni",
+          "match": "\\b\\d+\\b"
+        }
+      ]
+    },
+    "operators": {
+      "patterns": [
+        {
+          "name": "keyword.operator.comparison.cygni",
+          "match": "==|!=|>=|<=|>|<"
+        },
+        {
+          "name": "keyword.operator.logical.cygni",
+          "match": "&&|\\|\\||!"
+        },
+        {
+          "name": "keyword.operator.arithmetic.cygni",
+          "match": "[+\\-*/%]"
+        },
+        {
+          "name": "keyword.operator.assignment.cygni",
+          "match": "="
+        },
+        {
+          "name": "keyword.operator.scope.cygni",
+          "match": "::"
+        }
+      ]
+    },
+    "annotations": {
+      "patterns": [
+        {
+          "name": "meta.annotation.cygni",
+          "match": "@\\w+",
+          "captures": {
+            "0": { "name": "storage.type.annotation.cygni" }
+          }
+        }
+      ]
+    },
+    "functions": {
+      "match": "\\b(func)\\s+([a-zA-Z_]\\w*)",
+      "captures": {
+        "1": { "name": "keyword.declaration.cygni" },
+        "2": { "name": "entity.name.function.cygni" }
+      }
+    }
+  }
+}
